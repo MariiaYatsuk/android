@@ -6,7 +6,7 @@ import retrofit2.http.Query;
 
 public interface Api1 {
     @GET("validate")
-    Call<String> validateNumber(
+    Call<PhoneValidationResponse> validateNumber(
             @Query("access_key") String accessKey,
             @Query("number") String phoneNumber
     );
