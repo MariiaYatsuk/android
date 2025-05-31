@@ -1,5 +1,6 @@
 package com.example.apitest;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -14,6 +15,9 @@ public interface DBDao {
 
     @Query("SELECT * FROM phone_validation ORDER BY id DESC")
     List<DB> getAll();
+
+    @Query("SELECT * FROM phone_validation ORDER BY id DESC")
+    LiveData<List<DB>> getAllLiveData();
 
     @Insert
     void insertAll(List<DB> entities);
